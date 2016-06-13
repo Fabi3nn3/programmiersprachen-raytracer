@@ -16,3 +16,7 @@ class Shape{
 
 };
 #endif 
+
+/*kommentar Aufagbe 5.7
+std::shared_ptr<Shape>, s ist statisch S=std::make_shared<Sphere>(); dynamisch,
+für alle methoden die nicht virtuell sind geht c++ nach statisch Typ */

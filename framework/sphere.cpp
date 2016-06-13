@@ -7,22 +7,22 @@ Sphere::Sphere():
 	center_{0.0,0.0,0.0},
 	rad_{0.0}{}
 
-Spehre::Sphere(glm::vec3 const& center, float const& rad):
+Sphere::Sphere(glm::vec3 const& center, float const& rad):
 		
 	center_{center},
 	rad_{rad}{}
 
-float area() const override{
-	return 4.0f * M_PI * r * r;
+float Sphere::area() const{
+	return 4.0f * M_PI * rad_ * rad_;
 
 }
 
-float volume() const override{
+float Sphere::volume() const{
 
-	return(4.0f/3.0f) * M_PI * r * r * r;
+	return(4.0f/3.0f) * M_PI * rad_ * rad_* rad_;
 }
 
-glm::vec3 Sphere::center() const{
+glm::vec3 const& Sphere::center() const{
 
 	return center_;
 }

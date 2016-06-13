@@ -7,9 +7,9 @@ class Box : public Shape{
 
 	public:
 
-		Box():
+		Box();
 	
-		Box(glm::vec3 const& min, glm::vec3 const&max):
+		Box(glm::vec3 const& min, glm::vec3 const&max);
 		
 		virtual float area() const override; 
 		virtual float volume() const override;

@@ -1,5 +1,5 @@
-#include "shape.hpp"
-#include <cmath>
+//#include "shape.hpp"
+//#include <cmath>
 
 
-Shape::Shape():
+//Shape::Shape():

@@ -9,28 +9,32 @@ Box::Box(glm::vec3 const& min, glm::vec3 const&max):
 	max_{max},
 	min_{min}{}
 
-float area() const override{
+float Box::area() const{
 
-	return 
-}
-
-float volume() const override{
-	return
+	glm::vec3 differenz = max_ - min_;
+	return 2*(differenz.y*differenz.z+differenz.x*differenz.z+differenz.x*differenz.y);
 
 }
 
-glm::vec3 maximum() const{
+float Box::volume() const{
+	
+	glm::vec3 differenz = max_ - min_;
+	return differenz.x*differenz.y*differenz.z;
+
+}
+
+glm::vec3 Box::maximum() const{
 	return max_;
 }
 
-glm::vec3 minimum() const{
+glm::vec3 Box::minimum() const{
 	return min_;
 }
 
-void maximum(glm::vec3 const& max){
+void Box::maximum(glm::vec3 const& max){
 	max_ = max;
 }
 
-void minimum(glm::vec3 const& min){
+void Box::minimum(glm::vec3 const& min){
 	min_=min;
 }
