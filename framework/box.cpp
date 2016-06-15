@@ -2,12 +2,21 @@
 #include <cmath>
 
 Box::Box():
-	max_{0.0,0.0,0.0},
-	min_{0.0,0.0,0.0}{}
+	Shape(),
+	min_{0.0,0.0,0.0},
+	max_{0.0,0.0,0.0}
+	{}
 
-Box::Box(glm::vec3 const& min, glm::vec3 const&max):
-	max_{max},
-	min_{min}{}
+Box::Box(glm::vec3 const& min, glm::vec3 const& max):
+	min_{min},
+	max_{max}
+	{}
+
+Box::Box(std::string const& name, Color const& color, glm::vec3 const& min, glm::vec3 const& max):
+	Shape(name,color),
+	min_{min},
+	max_{max}
+	{}
 
 float Box::area() const{
 
@@ -21,6 +30,18 @@ float Box::volume() const{
 	glm::vec3 differenz = max_ - min_;
 	return differenz.x*differenz.y*differenz.z;
 
+}
+
+std::ostream& Box::print(std::ostream & os) const{
+	Shape::print(os);
+
+	os<< "min "
+	<<min_.x<< ", "
+	<<min_.y<< ", "
+	<<min_.z<< ", " <<std::endl<< "max "
+	<<max_.x<< ", "
+	<<max_.y<< ", "
+	<<max_.z<< ". ";
 }
 
 glm::vec3 Box::maximum() const{
