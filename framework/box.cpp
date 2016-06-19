@@ -5,18 +5,23 @@ Box::Box():
 	Shape(),
 	min_{0.0,0.0,0.0},
 	max_{0.0,0.0,0.0}
-	{}
+	{std::cout << "Create Box" << std::endl; }
 
 Box::Box(glm::vec3 const& min, glm::vec3 const& max):
 	min_{min},
 	max_{max}
-	{}
+	{std::cout << "Create Box" << std::endl; }
 
 Box::Box(std::string const& name, Color const& color, glm::vec3 const& min, glm::vec3 const& max):
 	Shape(name,color),
 	min_{min},
 	max_{max}
-	{}
+	{std::cout << "Create Box" << std::endl; }
+
+Box::~Box()
+	{
+		std::cout << "Delete Box" << std::endl;
+	}
 
 float Box::area() const{
 

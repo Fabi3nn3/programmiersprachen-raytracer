@@ -2,14 +2,19 @@
 #define BUW_SHAPE_HPP
 #include <color.hpp>
 #include <string>
+#include <glm/glm.hpp>
+#include <glm/gtx/intersect.hpp>
 
 
 class Shape{
 
 	public:
 		Shape();
-		//name_{"name"}, color_{r,g,b},
 		Shape(std::string const& name, Color const& color);
+		~Shape();
+		std::string getname() const;
+		Color const& getcolor() const;
+
 		virtual float area() const = 0; //Funktion auf dieser Ebene nicht implementiert
 		virtual float volume() const = 0;
 		virtual std::ostream & print (std::ostream & os) const;

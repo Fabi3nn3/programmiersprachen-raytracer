@@ -1,12 +1,16 @@
 #ifndef BUW_RAY_HPP
 #define BUW_RAY_HPP
+#include <glm/vec3.hpp>
 
-class Ray{
+struct Ray{
 
-	public:
 	Ray();
+	Ray(glm::vec3 const& ori, glm::vec3 const& dir):
 
-	private:
+	origin{ori},
+	direction{dir}{}
 
+	glm::vec3 origin;
+	glm::vec3 direction;
 };
 #endif
