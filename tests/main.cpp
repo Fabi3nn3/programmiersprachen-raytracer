@@ -325,5 +325,15 @@ TEST_CASE("intersect RaySphere","[intersect]"){
 
 int main(int argc, char *argv[])
 {
+
+	Color red (255, 0, 0);
+	glm::vec3 position(0, 0, 0);
+	Sphere * s1 = new Sphere("sphere0", red,  position, 1.2);
+	Shape * s2 = new Sphere ("sphere1", red,  position, 1.2);
+	s1 -> print(std::cout);
+	s2 -> print(std::cout);
+	delete s1;
+	delete s2;
+
   return Catch::Session().run(argc, argv);
 }
