@@ -11,8 +11,8 @@ class Shape{
 	public:
 		Shape();
 		Shape(std::string const& name, Color const& color);
-		~Shape();
-		std::string getname() const;
+		/*virtual*/~Shape();
+		std::string const& getname() const;
 		Color const& getcolor() const;
 
 		virtual float area() const = 0; //Funktion auf dieser Ebene nicht implementiert

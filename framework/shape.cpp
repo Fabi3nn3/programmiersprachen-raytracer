@@ -22,7 +22,7 @@ Shape::~Shape()
 		std::cout<< "Delete Shape" <<std::endl;
 	}
 
-std::string Shape::getname() const{
+std::string const& Shape::getname() const{
 
 	return name_;
 }
